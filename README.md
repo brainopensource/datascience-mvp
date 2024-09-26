@@ -79,4 +79,4 @@ Este projeto proporciona uma análise abrangente da produção de petróleo no p
 ## Dados de Contato
 
 - **E-mail:** [rochanft@gmail.com](mailto:rochanft@gmail.com)
-- **LinkedIn:** [Lucs Rocha](https://br.linkedin.com/in/lucsrocha/pt)
+- **LinkedIn:** [Lucas Rocha](https://br.linkedin.com/in/lucsrocha/pt)
