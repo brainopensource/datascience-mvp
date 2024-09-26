@@ -1,6 +1,16 @@
 # MVP Análise de Dados e Boas Práticas para Pós-Graduação em Ciência de Dados e Analytics (PUC Rio) - Análise da Produção de Petróleo no Pré-Sal do Brasil.
 
 
+## Tabela de Conteúdos
+- [Introdução](#introdução)
+- [Desenvolvimento do Mínimo Produto Viável (MVP)](#desenvolvimento-do-mínimo-produto-viável-mvp)
+- [Análises Estatísticas e Pré-processamento](#análises-estatísticas-e-pré-processamento)
+- [Upstream do Pré-Sal do Brasil nos Últimos Anos](#upstream-do-pré-sal-do-brasil-nos-últimos-anos)
+- [Possibilidades para Implementações Futuras](#possibilidades-para-implementações-futuras)
+- [Conclusão](#conclusão)
+- [Dados de Contato](#dados-de-contato)
+
+
 ## Introdução
 
 O pré-sal brasileiro, uma vasta região de reservas de petróleo localizada abaixo de uma camada de sal no fundo do oceano, representa uma das maiores descobertas de petróleo da última década. Desde sua exploração inicial, a produção tem se intensificado, destacando-se como um componente crítico para a matriz energética do Brasil. Este projeto visa analisar a produção de petróleo no pré-sal nos últimos anos, oferecendo uma visão detalhada das tendências e projeções futuras.
@@ -58,3 +68,15 @@ Essas análises iniciais geram insights valiosos para a gestão e a operação d
 ## Conclusão
 
 Este projeto proporciona uma análise abrangente da produção de petróleo no pré-sal do Brasil, oferecendo insights valiosos sobre o desempenho passado e projeções futuras. Com a continuação dos esforços de investimento e inovação, o pré-sal permanece uma peça chave na matriz energética do Brasil, com potencial para influenciar o mercado global de petróleo.
+
+
+## Referências
+
+- **Agência Nacional de Petróleo (ANP)**: [Consulta à Produção por Poço](https://cdp.anp.gov.br/ords/r/cdp_apex/consulta-dados-publicos-cdp/consulta-produ%C3%A7%C3%A3o-por-po%C3%A7o)
+- **Dados Abertos da ANP**: [Produção de Petróleo e Gás Natural por Poço](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/producao-de-petroleo-e-gas-natural-por-poco)
+
+
+## Dados de Contato
+
+- **E-mail:** [rochanft@gmail.com](mailto:rochanft@gmail.com)
+- **LinkedIn:** [Lucs Rocha](https://br.linkedin.com/in/lucsrocha/pt)
