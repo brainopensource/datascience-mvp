@@ -1,17 +1,10 @@
 # MVP Análise de Dados e Boas Práticas para Pós-Graduação em Ciência de Dados e Analytics (PUC Rio) - Análise da Produção de Petróleo no Pré-Sal do Brasil.
 
+
 ## Introdução
 
 O pré-sal brasileiro, uma vasta região de reservas de petróleo localizada abaixo de uma camada de sal no fundo do oceano, representa uma das maiores descobertas de petróleo da última década. Desde sua exploração inicial, a produção tem se intensificado, destacando-se como um componente crítico para a matriz energética do Brasil. Este projeto visa analisar a produção de petróleo no pré-sal nos últimos anos, oferecendo uma visão detalhada das tendências e projeções futuras.
 
-## Objetivo
-
-O principal objetivo deste projeto é realizar uma análise estatística da produção de petróleo no pré-sal brasileiro, com foco nas seguintes questões:
-
-- Avaliar a produção total de petróleo anual e mensal no pré-sal.
-- Identificar tendências e padrões na produção ao longo dos anos.
-- Projeção da produção de 2024, considerando dados disponíveis até o primeiro semestre.
-- Fornecer insights que podem ajudar na formulação de estratégias para o setor energético.
 
 ## Desenvolvimento do Mínimo Produto Viável (MVP)
 
@@ -21,6 +14,7 @@ A proposta central é explorar os dados de produção de petróleo e gás na reg
 
 Este MVP não só contribui para uma maior compreensão da indústria de petróleo e gás no Brasil nos últimos cinco anos, como também estabelece uma base sólida para análises preditivas e avanços no uso de técnicas de machine learning em projetos futuros. Assim, o projeto serve tanto a propósitos acadêmicos quanto práticos, fornecendo uma visão inicial sobre a produção de petróleo no pré-sal e potencializando aplicações futuras.
 
+
 ## Análises Estatísticas e Pré-processamento
 
 O pré-processamento dos dados é um passo crucial para garantir a precisão da análise. Este projeto envolveu as seguintes etapas:
@@ -29,11 +23,10 @@ O pré-processamento dos dados é um passo crucial para garantir a precisão da 
 
 - **Limpeza de Dados**: As informações foram tratadas para remover inconsistências, valores nulos e registros duplicados.
 
-- **Conversão de Datas**: As datas foram convertidas para o formato apropriado, facilitando a análise temporal.
+- **Conversão de Dados**: As datas e colunas com valores de produção foram convertidas para o formato apropriado, facilitando a análise temporal.
 
 - **Adição de Colunas**: Colunas para ano e mês foram adicionadas para permitir análises mais detalhadas por período.
 
-- **Cálculo de Produção**: A produção total de petróleo foi calculada, convertendo os dados de KBD (milhares de barris por dia) para milhões de barris, a fim de facilitar a interpretação dos resultados.
 
 ## Upstream do Pré-Sal do Brasil nos Últimos Anos
 
@@ -45,17 +38,18 @@ Nos últimos anos, o Brasil tem experimentado um crescimento significativo na pr
 
 - **Impacto Econômico**: A produção do pré-sal tem um impacto econômico significativo, contribuindo para a arrecadação de impostos e royalties que ajudam a financiar programas sociais e investimentos em infraestrutura.
 
-- **Desafios**: Apesar do crescimento, o setor enfrenta desafios, como a flutuação dos preços do petróleo no mercado internacional e questões ambientais associadas à exploração do petróleo.
+- **Desafios**: Apesar do crescimento, o setor enfrenta desafios, como a flutuação dos preços do petróleo no mercado internacional e questões ambientais associadas à exploração do petróleo e questões geopolíticas.
 
-## Objetivo do Trabalho
 
-O objetivo deste trabalho é investigar a produção de petróleo e gás natural por poço, utilizando dados que abrangem o período de janeiro de 2020 até o primeiro semestre de 2024. Esse recorte captura as tendências mais recentes da indústria e nos permite explorar os fatores que influenciam a produtividade e a eficiência. A partir da aplicação de técnicas de ciência de dados, buscamos identificar padrões produtivos, anomalias e insights que possam otimizar a alocação de recursos e aumentar a eficiência e previsibilidade operacional e financeira.
+## Possibibilidade para implementações futuras
+
+Neste trabalho iremos nos preparar para construir modelos úteis para analisar a produção de petróleo e gás natural por poço no futuro, enquanto aplicamos as técnicas do curso. Por ser um MVP, temos um recorte dos últimos anos de produção apenas que poderá ser extendido para a produção histórica completa no futuro. Tal recorte captura as tendências mais recentes da indústria e nos permite explorar os fatores que influenciam a produtividade e a eficiência. A partir da aplicação de técnicas de ciência de dados, buscamos identificar padrões produtivos, anomalias e insights que possam otimizar a alocação de recursos e aumentar a eficiência e previsibilidade operacional e financeira.
 
 A riqueza dos dados por poço oferece oportunidades significativas para análises detalhadas. Através de métodos estatísticos e, futuramente, de algoritmos de aprendizado de máquina, pretendemos explorar diversas aplicações, incluindo:
 
 - Análise de Eficiência da Produção
 - Geração de Curvas de Decaimento de Poços
-- Classificação de Poços por Eficiência
+- Classificação de Poços e Campos por Eficiência
 - Previsão da Produção Total por Campo
 - Previsão de Royalties
 
