@@ -3,9 +3,10 @@
 
 ## Tabela de Conteúdos
 - [Introdução](#introdução)
-- [Desenvolvimento do Mínimo Produto Viável (MVP)](#desenvolvimento-do-mínimo-produto-viável-mvp)
+- [Desenvolvimento do Mínimo Produto Viável Análise de dados (MVP)](#desenvolvimento-do-mínimo-produto-viável-mvp)
 - [Análises Estatísticas e Pré-processamento](#análises-estatísticas-e-pré-processamento)
 - [Upstream do Pré-Sal do Brasil nos Últimos Anos](#upstream-do-pré-sal-do-brasil-nos-últimos-anos)
+- [Desenvolvimento do Mínimo Produto Viável Machine Learning (MVP)](#desenvolvimento-do-mínimo-produto-viável-mvp)
 - [Possibilidades para Implementações Futuras](#possibilidades-para-implementações-futuras)
 - [Conclusão](#conclusão)
 - [Dados de Contato](#dados-de-contato)
