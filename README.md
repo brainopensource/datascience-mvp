@@ -21,7 +21,7 @@ A proposta inicial envolve a aplicação de técnicas de machine learning para p
 
 ## Análises Estatísticas e Pré-processamento
 
-Utilizando os conhecimentos da ultima sprint foi feito o pré-processamento dos dados e esse notebook do colab foi utilizado como auxílio para poder compilar a informação de maneira mais eficiente e prática, para então ser utilizado no notebook de Machine Learning eficientemente e focando na parte de Inteligencia Artificial, separando a parte de pré-processamento [Colab Auxiliar MVP Pré-Processamento](https://github.com/brainopensource/datascience-mvp/blob/main/MVP_An%C3%A1lise_de_Dados_e_Boas_Pr%C3%A1ticas.ipynb)
+Utilizando os conhecimentos da ultima sprint foi feito o pré-processamento dos dados e esse notebook do colab foi utilizado como auxílio para poder compilar a informação de maneira mais eficiente e prática, para então ser utilizado no notebook de Machine Learning eficientemente e focando na parte de Inteligencia Artificial, separando a parte de pré-processamento [Notebook Colab MVP Análise de dados Pré-Processamento](https://github.com/brainopensource/datascience-mvp/blob/main/MVP_An%C3%A1lise_de_Dados_e_Boas_Pr%C3%A1ticas.ipynb) e [Notebook Colab Auxiliar](https://github.com/brainopensource/datascience-mvp/blob/main/MVP_An%C3%A1lise_de_Dados_e_Boas_Pr%C3%A1ticas_Extended.ipynb)
 
 O pré-processamento dos dados foi uma etapa fundamental para garantir a qualidade dos modelos preditivos. As principais etapas realizadas foram:
 
