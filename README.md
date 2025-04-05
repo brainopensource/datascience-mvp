@@ -1,16 +1,16 @@
-# 🛢️ Análise Histórica da Produção de Petróleo Offshore no Brasil (2010–2024)
+# 🛢️ Análise Histórica da Produção de Petróleo Offshore no Brasil (1980–2024)
 
 ## 📑 Tabela de Conteúdos
 
-- [Introdução](#introdução)  
+- [Introdução](#-introdução)
 - [Objetivo](#-objetivo)
-- [Arquitetura e Pipeline de Dados](#arquitetura-e-pipeline-de-dados)  
-- [Modelagem e Catálogo de Dados](#modelagem-e-catálogo-de-dados)  
-- [Carga e Processamento com ETL](#carga-e-processamento-com-etl)  
-- [Análises e Respostas](#análises-na-camada-ouro)  
-- [Discussões e Insights](#discussões-e-insights)  
-- [Repositório de Notebooks](#repositório-de-notebooks)  
-- [Referências](#referências)  
+- [Arquitetura e Pipeline de Dados](#️-arquitetura-e-pipeline-de-dados)
+- [Modelagem e Catálogo de Dados](#-modelagem-e-catálogo-de-dados)
+- [Carga e Processamento com ETL](#-carga-e-processamento-com-etl)  
+- [Análises e Respostas](#-análises-na-camada-ouro)  
+- [Discussões e Insights](#-discussões-e-insights)  
+- [Repositório de Notebooks](#-repositório-de-notebooks)  
+- [Referências](#-referências)  
 
 ---
 
@@ -199,18 +199,29 @@ Na camada Bronze, optamos por manter todas as colunas disponíveis, incluindo pr
 ---
 
 
-## 📊 Camada Ouro – Análises e Métricas Derivadas
 
-Na camada Ouro, transformamos os dados brutos em informações analíticas por meio de agregações, cálculos e visualizações. As análises realizadas incluem:
+## Carga e Processamento com ETL
+
+Os dados utilizados neste projeto são provenientes da **Agência Nacional do Petróleo (ANP)**, que disponibiliza relatórios mensais de produção de petróleo, gás, água e derivados por poço. Entretanto, os arquivos originais exigem captcha para download, o que inviabiliza a automação direta da coleta e dificulta a replicação dos estudos. Para contornar essa limitação e viabilizar a replicabilidade dos processos, os arquivos foram previamente organizados e disponibilizados no repositório público do GitHub, com estrutura semelhante à da ANP, separados por ano e tipo de produção (`Mar` e `Pré-Sal`).
+
+📁 [datasets/monthly_production](https://github.com/brainopensource/datascience-mvp/tree/main/datasets/monthly_production)
+
+
+O Scraper gera dinamicamente os links por ano pra mar e pré-sal, carregando os CSVs em dataframes pandas, e apenas tem as colunas renomeadas para evitar problemas na criação de bancos de dados removendo espaços ou caracteres especiais. Também são concatenados alguns arquivos CSVs, pois o dado de Mar e do Pré-Sal não vem junto da fonte ANP. Mas isso é indiferente pois na tabela bronze do Banco de Dados será tudo uma única tabela, já que as colunas são as mesmas.
+
+
+
+## Análises e Respostas
+
+Durante a análise dos dados de produção, buscamos responder a diversas perguntas-chave sobre o cenário nacional e regional da exploração offshore. Inicialmente, investigamos quantos campos produtores estão ativos por estado e por bacia, além de identificar o número total de campos offshore em operação. Ampliando a visão, analisamos quem são os maiores produtores de óleo offshore no Brasil nos últimos 12 meses, avaliando quais operadores aumentaram ou reduziram sua produção e construindo um ranking com os 10 maiores produtores nacionais. Em uma abordagem mais focada, examinamos a evolução de produção nos campos de Tupi, Sapinhoá e Jubarte, com foco na produção média, acumulada e nos indicadores GoR e GoW para entender a eficiência dos campos e suas tendências de desempenho. Essas análises fornecem uma base sólida para interpretações estratégicas da produção offshore brasileira e utilizando a estrutura atual do trabalho poderíamos ampliar o escopo pra responder outras perguntas semelhantes ou analisar outros campos offshore no Brasil.
+
+Na cama ouro respondemos as perguntas de análises gerais e análises focadas em campos importantes escolhidos arbitrariamente por fins de estudo e exemplificação do uso do trabalho como framework pra análises futuras e treinamento de modelos de Machine Learning de maneira mais automatizada e integrada. 
 
 ### 🔹 Análises Gerais
 
 - Total de **campos produtores por estado**.
 - Total de **campos produtores por bacia**.
 - Número total de **campos offshore em produção**.
-
-### 🔹 Análise Ampla da Produção Offshore Nacional
-
 - Identificação dos **maiores produtores de óleo offshore** nos **últimos 12 meses da amostra**.
 - Cálculo do **delta de produção de óleo** (crescimento ou declínio).
 - Geração de um **ranking com os 10 maiores produtores offshore** do Brasil no período analisado.
@@ -232,27 +243,153 @@ Analisamos três campos relevantes da Bacia de Campos para entender seu comporta
   - Análise da evolução temporal desses índices com comparações entre Tupi, Sapinhoá e Jubarte.
 
 
-## Carga e Processamento com ETL
-
-Os dados utilizados neste projeto são provenientes da **Agência Nacional do Petróleo (ANP)**, que disponibiliza relatórios mensais de produção de petróleo, gás, água e derivados por poço. Entretanto, os arquivos originais exigem captcha para download, o que inviabiliza a automação direta da coleta e dificulta a replicação dos estudos. Para contornar essa limitação e viabilizar a replicabilidade dos processos, os arquivos foram previamente organizados e disponibilizados no repositório público do GitHub, com estrutura semelhante à da ANP, separados por ano e tipo de produção (`Mar` e `Pré-Sal`).
-
-📁 [datasets/monthly_production](https://github.com/brainopensource/datascience-mvp/tree/main/datasets/monthly_production)
-
-O código responsável pela ingestão dos dados pode ser encontrado no notebook:
-
-📓 [`notebooks/scraper.ipynb`](notebooks/scraper.ipynb)
-
-O Scraper gera dinamicamente os links por ano pra mar e pré-sal, carregando os CSVs em dataframes pandas, e apenas tem as colunas renomeadas para evitar problemas na criação de bancos de dados removendo espaços ou caracteres especiais. Também são concatenados alguns arquivos CSVs, pois o dado de Mar e do Pré-Sal não vem junto da fonte ANP. Mas isso é indiferente pois na tabela bronze do Banco de Dados será tudo uma única tabela, já que as colunas são as mesmas.
-
-
-
-## Análises e Respostas
-
-
 ## Discussões e Insights
 
+Nesta seção discutiremos as principais análises exploratórias realizadas sobre os dados de produção de petróleo e gás, com foco na distribuição por estado, por bacia e na evolução temporal da produção de alguns campos. A partir dessas análises, levantamos insights sobre a concentração geográfica da produção, a maturidade dos campos e os padrões de comportamento de produção entre diferentes regiões. 
 
-## Repositório de Notebooks
+Também serão propostas melhorias futuras, como a criação de dashboards interativos para visualização dinâmica dos dados e a preparação de bases para possíveis modelos de machine learning, voltados à previsão de produção, identificação de anomalias e suporte à tomada de decisão estratégica.
+
+### Distribuição por Estado e Bacia
+
+No total temos **136 campos** na nossa base de dados. Esse número mostra a extensão atual da atividade exploratória e produtiva no Brasil. Ainda que o país tenha bacias sedimentares espalhadas por diversas regiões, a produção está concentrada em algumas poucas áreas — como veremos a seguir.
+
+![Campos Produtores por Estado Brasileiro](./imagens/campos_por_estado.png)
+
+A dominância do **Rio de Janeiro**, com **76 campos**, é gritante — mais da metade dos campos produtivos do país. Isso não é surpresa: o RJ concentra grande parte da produção offshore, especialmente nas bacias de Campos e Santos, que se estendem majoritariamente pelo litoral fluminense.
+
+Outros destaques:
+
+- **Espírito Santo** aparece forte com **16 campos**, refletindo o potencial da bacia homônima e sua infraestrutura já estabelecida.
+- **São Paulo** tem o mesmo número de campos que **Sergipe** (**10**), mas em contextos bem distintos: SP é relevante por causa da Bacia de Santos (Pré-Sal), enquanto SE reflete uma exploração onshore e offshore menor, mas ativa.
+- Estados como **Bahia**, **Rio Grande do Norte**, **Ceará** e **Alagoas** têm produção histórica onshore e continuam ativos, mas em menor escala.
+
+Essa distribuição reforça a **transição do protagonismo da produção terrestre** (que já foi o motor na Bahia e RN, por exemplo) para o **offshore do Sudeste**.
 
 
-## Referências
+Cabe ressaltar que existe sim uma concentração geográfica - RJ e SP concentram mais de 60% dos campos. Isso tem implicações logísticas, de infraestrutura, regulação e até ambientais. Mas nem sempre o número de campos reflete a produção. Poucos campos (como Tupi e Búzios) produzem volumes gigantescos. Isso merece uma análise à parte, comparando número de campos vs volume agregado.
+
+E claramente está havendo uma transição onshore pro offshore: A distribuição por bacia e estado reforça como a produção migrou para águas profundas e ultra profundas. 
+
+![Campos Produtores por Bacia Geográfica](./imagens/campos_por_bacia.png)
+
+Além da transição energética como um todo pra fontes renováveis e mais limpas, mas isso foge ao escopo desse trabalho.
+
+### Evolução Temporal da Produção por Campo
+
+Nesta etapa da análise, o foco foi investigar a **evolução temporal da produção de óleo, gás e água** em campos específicos da **Bacia de Campos**, com ênfase nos campos de **Tupi**, **Jubarte** e **Sapinhoá**.
+
+O gráfico, gerado no próprio DataBricks, mostra claramente:
+
+![Produção de Óleo por Campo](./imagens/producao_oleo_por_campo_1.png)
+
+- A ascensão de **Tupi** como o maior produtor, com rápido crescimento após 2010, atingindo picos acima de **40 mil kboe/mês**.
+- **Sapinhoá** e **Jubarte** também apresentam trajetórias consistentes, com variações bem marcadas que indicam diferentes estágios de maturidade dos campos.
+- A partir de 2020, é possível observar **sinais de estabilização ou queda** na produção dos três campos, o que pode estar relacionado à maturidade natural dos reservatórios, estratégias de escoamento ou mudanças operacionais.
+
+Essa abordagem fornece uma visão clara da trajetória de produção desses campos-chave dentro da bacia, essencial para **avaliar o desempenho e o ciclo de vida produtivo** das áreas analisadas.
+
+Também foram gerados gráficos das produções de Gás e Água dos campos no periodo:
+
+![Produção de Gás por Campo](./imagens/producao_gas_por_campo_1.png)
+![Produção de Água por Campo](./imagens/producao_agua_por_campo_1.png)
+
+### Evolução Temporal da Produção Acumulada
+
+Nesta etapa da análise, o foco foi calcular e visualizar a produção acumulada de óleo nos campos de Tupi, Jubarte e Sapinhoá, ao longo do tempo. A partir dos dados mensais de produção, foi realizada a agregação cumulativa por campo, permitindo observar o crescimento consolidado da produção em cada área.
+
+O gráfico a seguir mostra:
+
+- Tupi se destaca como o campo de maior produção acumulada, ultrapassando a marca de 3 bilhões de barris até meados de 2024, com crescimento acentuado a partir de 2013.
+
+- Jubarte, que iniciou a produção antes dos demais, apresenta uma curva mais suave e consistente ao longo do tempo.
+
+- Sapinhoá teve início mais tardio, mas seguiu uma trajetória de crescimento constante, aproximando-se da produção acumulada de Jubarte nos últimos anos.
+
+![Produção Acumulada de Óleo por Campo](./imagens/producao_oleo_acumulada_por_campo.png)
+
+O crescimento acelerado da curva de Tupi, especialmente a partir de 2013, sugere alta produtividade inicial associada ao início do desenvolvimento massivo do pré-sal, impulsionado por múltiplos sistemas de produção. A inclinação acentuada da curva indica um campo ainda em fase de plateau ou início de declínio suave, típico de ativos jovens com boa pressão de reservatório.
+
+Em contraste, Jubarte apresenta uma curva mais linear e suave, refletindo um campo mais antigo, com produção mais distribuída ao longo do tempo e indícios de estágio avançado de maturação, possivelmente com técnicas de manutenção de pressão já aplicadas (como injeção de água ou gás).
+
+Sapinhoá surge como um caso intermediário: crescimento consistente, mas menos agressivo que Tupi, com curva sugerindo transição entre o plateau e o início do declínio.
+
+Esse padrão de evolução acumulada está intimamente ligado à dinâmica de GOR (Gas-Oil Ratio) e GOW (Gas-Oil-Water) ao longo da vida útil dos campos que será abordado depois.
+
+
+### Maiores Produtores dos últimos meses
+
+Ao analisar os dados de produção acumulada dos principais campos offshore brasileiros entre 2023 e 2024, destacam-se padrões relevantes tanto em volume total quanto em crescimento no período.
+
+![Maiores Produtores](./imagens/maiores_produtores.png)
+
+O campo de Tupi permanece como o maior produtor absoluto, superando a marca de 2,8 milhões de kboe acumulados em 2024, com um crescimento de cerca de 293 mil kboe em 12 meses. Sua curva indica um campo já em fase madura, mas ainda com capacidade de entregar volumes expressivos, possivelmente sustentado por boa infraestrutura e gerenciamento de reservatório.
+
+Entre os campos com maior crescimento absoluto, destacam-se:
+
+- Búzios_ECO, com um salto de +182 mil kboe, e
+
+- Mero, que quase dobrou sua produção acumulada no ano, com +81 mil kboe.
+
+Esses dois fazem parte da nova geração do pré-sal, em rápida ascensão, indicando que estão em fase de ramp-up produtivo, com plataformas entrando em operação recente.
+
+Campos como Jubarte e Sapinhoá mostram crescimento mais moderado (+47 mil e +56 mil, respectivamente), compatível com perfis de campos em platô ou início de declínio, mantendo níveis altos, mas com menor incremento ano a ano.
+
+Já ativos como Roncador e Marlim Sul, ambos com produção histórica relevante, tiveram os menores crescimentos absolutos do ranking analisado (+39 mil e +29 mil kboe), sugerindo que estão em estágio avançado de maturidade ou operando próximos ao limite econômico, dependendo de revitalizações ou novas campanhas para manter a produção.
+
+
+### Análise do GoR e GoW
+
+A evolução temporal dos indicadores GOR e GOW foi analisada para os campos de TUPI, SAPINHOÁ e JUBARTE, com gráficos plotados ao longo do período de produção (2013–2024). Essa abordagem permite identificar:
+
+    Tendências de GOR: aumento ao longo do tempo pode sugerir despressurização ou avanço da zona de gás;
+
+    Tendências de GOW: crescimento na razão gás/(óleo+água) pode indicar aumento da produção de água, afetando a qualidade do fluxo produzido.
+
+As curvas observadas nos gráficos sugerem, por exemplo:
+
+    TUPI apresenta estabilidade com leve aumento de GOR, sugerindo operação sob controle de pressões;
+
+    SAPINHOÁ mostra flutuações em GOW após 2020, que podem estar relacionadas a alterações no contato água-óleo;
+
+    JUBARTE mantém GOR mais baixo, mas o GOW se eleva ao final da série, potencialmente indicando avanço de água no reservatório.
+
+Vale ressaltar que:
+- O GOR é a razão entre o volume de gás produzido e o volume de óleo produzido. É um indicador fundamental para entender a composição dos fluidos produzidos e pode revelar mudanças no comportamento do reservatório ao longo do tempo.
+
+GOR = Volume de Gás Produzido / Volume de Óleo Produzido
+
+GOR = V<sub>gás</sub> / V<sub>óleo</sub>
+
+- O GOW expande a análise ao incluir o volume de água produzida, oferecendo uma visão mais abrangente da mistura de fluidos extraída do reservatório. É especialmente útil para detectar aumento na produção de água, o que pode sinalizar intrusão de aquífero ou problemas de completação.
+
+GOW = Volume de Gás Produzido / (Volume de Óleo Produzido + Volume de Água Produzida)
+
+GOW = V<sub>gás</sub> / (V<sub>óleo</sub> + V<sub>água</sub>)
+
+
+
+
+## 📁 Notebooks do Projeto
+
+
+Todos os notebooks utilizados neste trabalho estão organizados dentro da pasta `./notebooks/`. Abaixo, a lista com links diretos para cada um:
+
+- 📓 [`notebooks/Notebook_SCRAPER.ipynb`](notebooks/Notebook_SCRAPER.ipynb) – Responsável por realizar o scraping dos dados abertos da ANP.
+
+- 📓 [`notebooks/Notebook_BRONZE.ipynb`](notebooks/Notebook_BRONZE.ipynb) – Armazenamento e consolidação dos dados brutos, representando a camada inicial do pipeline.
+
+- 📓 [`notebooks/Notebook_PRATA.ipynb`](notebooks/Notebook_PRATA.ipynb) – Tratamento e padronização dos dados, preparando-os para análise.
+
+- 📓 [`notebooks/Notebook_OURO.ipynb`](notebooks/Notebook_OURO.ipynb) – Agregações, análise exploratória, visualizações e extração de insights.
+
+
+
+# Referências
+
+Os dados utilizados neste projeto são disponibilizados pela **Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)**, órgão regulador responsável por fiscalizar e divulgar informações públicas do setor de petróleo e gás no Brasil.
+
+O portal oficial para consulta de produção por poço pode ser acessado neste link:
+
+🔗 [Consulta de Produção por Poço - ANP](https://cdp.anp.gov.br/ords/r/cdp_apex/consulta-dados-publicos-cdp/consulta-produ%C3%A7%C3%A3o-por-po%C3%A7o)
+
+> ⚠️ **Atenção**: o site da ANP utiliza **CAPTCHA** para restringir acessos automatizados, o que impossibilita a extração direta dos dados via API ou scripts de scraping tradicionais. Por isso, foi necessário o download manual dos arquivos .CSV disponibilizados mês a mês no repositório. [`datasets/monthly_production/`](./datasets/monthly_production)
