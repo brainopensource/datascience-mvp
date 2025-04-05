@@ -2,19 +2,19 @@
 
 ## 📑 Tabela de Conteúdos
 
-- [Introdução](#-introdução)
-- [Objetivo](#-objetivo)
-- [Arquitetura e Pipeline de Dados](#️-arquitetura-e-pipeline-de-dados)
-- [Modelagem e Catálogo de Dados](#-modelagem-e-catálogo-de-dados)
-- [Carga e Processamento com ETL](#-carga-e-processamento-com-etl)  
-- [Análises e Respostas](#-análises-na-camada-ouro)  
-- [Discussões e Insights](#-discussões-e-insights)  
-- [Repositório de Notebooks](#-repositório-de-notebooks)  
-- [Referências](#-referências)  
+- [Introdução](#introdução)
+- [Objetivo](#objetivo)
+- [Arquitetura e Pipeline de Dados](#️arquitetura-e-pipeline-de-dados)
+- [Modelagem e Catálogo de Dados](#modelagem-e-catálogo-de-dados)
+- [Carga e Processamento com ETL](#carga-e-processamento-com-etl)  
+- [Analises e Respostas](#analises-na-camada-ouro)  
+- [Discussoes e Insights](#discussoes-e-insights)  
+- [Repositorio de Notebooks](#repositorio-de-notebooks)  
+- [Referencias](#referencias)  
 
 ---
 
-## 🧭 Introdução
+## Introdução
 
 A produção de petróleo e gás offshore no Brasil — especialmente nas reservas do pré-sal — representa um dos maiores ativos energéticos do século XXI, com impacto direto na economia nacional, na segurança energética e no cenário geopolítico global. Entender a evolução, o comportamento produtivo e os padrões operacionais desses campos é fundamental para subsidiar decisões estratégicas, otimizar a gestão de recursos e apoiar políticas públicas.
 
@@ -27,7 +27,7 @@ Além do processamento e enriquecimento dos dados, o projeto também propõe uma
 A fonte dos dados é a **Agência Nacional do Petróleo (ANP)**, que publica mensalmente arquivos CSV com informações por poço produtor. Contudo, devido à exigência de captcha no site da ANP, os dados foram previamente baixados e incluídos neste repositório nas pastas organizadas por ano [`datasets/monthly_production/`](./datasets/monthly_production), viabilizando um pipeline de dados automatizado a partir dos arquivos locais.
 
 
-## 🎯 Objetivo
+## Objetivo
 
 O objetivo desta análise é transformar os dados brutos de produção de petróleo e gás em informações valiosas, que permitam compreender melhor o comportamento da produção nacional — com foco especial nos campos offshore.
 
@@ -76,7 +76,7 @@ A execução do pipeline foi feita na plataforma **Databricks**, utilizando note
 Essa arquitetura garante escalabilidade, reutilização e facilidade de manutenção, permitindo que o pipeline seja adaptado para incluir novos dados mensais e que análises históricas possam ser reproduzidas com consistência. O modelo foi desenhado para suportar tanto análises exploratórias quanto estudos estratégicos mais aprofundados.
 
 
-## Modelagem e Catálogo de Dados
+## Modelagem e Catalogo de Dados
 
 A modelagem dos dados deste projeto adota uma arquitetura em camadas (Bronze, Prata e Ouro), com o objetivo de garantir rastreabilidade, qualidade e reutilização dos dados em análises futuras. 
 
