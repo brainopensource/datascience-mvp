@@ -4,12 +4,12 @@
 
 - [Introdução](#introdução)
 - [Objetivo](#objetivo)
-- [Arquitetura e Pipeline de Dados](#️arquitetura-e-pipeline-de-dados)
-- [Modelagem e Catálogo de Dados](#modelagem-e-catálogo-de-dados)
+- [Arquitetura de Dados](#arquitetura-de-dados)
+- [Modelagem e Catalogo de Dados](#modelagem-e-catalogo-de-dados)
 - [Carga e Processamento com ETL](#carga-e-processamento-com-etl)  
-- [Analises e Respostas](#analises-na-camada-ouro)  
+- [Analises e Respostas](#analises-e-respostas)  
 - [Discussoes e Insights](#discussoes-e-insights)  
-- [Repositorio de Notebooks](#repositorio-de-notebooks)  
+- [Repositorio de Notebooks](#notebooks-do-projeto)  
 - [Referencias](#referencias)  
 
 ---
@@ -43,7 +43,7 @@ A partir disso, buscamos responder perguntas estratégicas como:
 Estas perguntas orientam toda a etapa analítica e servirão como base para as respostas e interpretações discutidas na seção de Análise.
 
 
-## Arquitetura e Pipeline de Dados
+## Arquitetura de Dados
 
 A arquitetura deste projeto foi construída com base no modelo **Medallion Architecture**, organizado em três camadas principais: **Bronze**, **Prata** e **Ouro**. Essa estrutura permite rastreabilidade, reprocessamento eficiente e separação clara entre dados brutos, tratados e analíticos.
 
