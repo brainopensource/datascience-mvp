@@ -43,7 +43,7 @@ A partir disso, buscamos responder perguntas estratégicas como:
 Estas perguntas orientam toda a etapa analítica e servirão como base para as respostas e interpretações discutidas na seção de Análise.
 
 
-## 🏗️ Arquitetura e Pipeline de Dados
+## Arquitetura e Pipeline de Dados
 
 A arquitetura deste projeto foi construída com base no modelo **Medallion Architecture**, organizado em três camadas principais: **Bronze**, **Prata** e **Ouro**. Essa estrutura permite rastreabilidade, reprocessamento eficiente e separação clara entre dados brutos, tratados e analíticos.
 
@@ -211,7 +211,7 @@ O Scraper gera dinamicamente os links por ano pra mar e pré-sal, carregando os 
 
 
 
-## Análises e Respostas
+## Analises e Respostas
 
 Durante a análise dos dados de produção, buscamos responder a diversas perguntas-chave sobre o cenário nacional e regional da exploração offshore. Inicialmente, investigamos quantos campos produtores estão ativos por estado e por bacia, além de identificar o número total de campos offshore em operação. Ampliando a visão, analisamos quem são os maiores produtores de óleo offshore no Brasil nos últimos 12 meses, avaliando quais operadores aumentaram ou reduziram sua produção e construindo um ranking com os 10 maiores produtores nacionais. Em uma abordagem mais focada, examinamos a evolução de produção nos campos de Tupi, Sapinhoá e Jubarte, com foco na produção média, acumulada e nos indicadores GoR e GoW para entender a eficiência dos campos e suas tendências de desempenho. Essas análises fornecem uma base sólida para interpretações estratégicas da produção offshore brasileira e utilizando a estrutura atual do trabalho poderíamos ampliar o escopo pra responder outras perguntas semelhantes ou analisar outros campos offshore no Brasil.
 
@@ -243,7 +243,7 @@ Analisamos três campos relevantes da Bacia de Campos para entender seu comporta
   - Análise da evolução temporal desses índices com comparações entre Tupi, Sapinhoá e Jubarte.
 
 
-## Discussões e Insights
+## Discussoes e Insights
 
 Nesta seção discutiremos as principais análises exploratórias realizadas sobre os dados de produção de petróleo e gás, com foco na distribuição por estado, por bacia e na evolução temporal da produção de alguns campos. A partir dessas análises, levantamos insights sobre a concentração geográfica da produção, a maturidade dos campos e os padrões de comportamento de produção entre diferentes regiões. 
 
@@ -369,7 +369,7 @@ GOW = V<sub>gás</sub> / (V<sub>óleo</sub> + V<sub>água</sub>)
 
 
 
-## 📁 Notebooks do Projeto
+## Notebooks do Projeto
 
 
 Todos os notebooks utilizados neste trabalho estão organizados dentro da pasta `./notebooks/`. Abaixo, a lista com links diretos para cada um:
@@ -384,7 +384,7 @@ Todos os notebooks utilizados neste trabalho estão organizados dentro da pasta 
 
 
 
-# Referências
+## Referencias
 
 Os dados utilizados neste projeto são disponibilizados pela **Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)**, órgão regulador responsável por fiscalizar e divulgar informações públicas do setor de petróleo e gás no Brasil.
 
